@@ -1,0 +1,12 @@
+<h5>Comments:</h5>
+<% for comment in @market.comments %>
+  <%= comment.body %><br><br>
+<% end %>
+
+<br><br>
+
+<h5>Add Comment:</h5>
+<%= form_for [@market, @comment] do |f| %>
+  <%= f.text_area :body %><br>
+  <%= f.submit %>
+<% end %>

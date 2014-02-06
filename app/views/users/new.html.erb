@@ -1,0 +1,32 @@
+<div class="container"> 
+  <div align="center">
+    <h1>Sign up</h1>
+
+    <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(@user) do |f| %>
+          <% unless @user.errors.count == 0   %>
+          <div class="alert alert-error">
+              The form contains <%= pluralize(@user.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+              <li>* <%= msg %></li>
+          <% end %>
+          </ul>
+          <% end %>
+
+          <%= f.text_field :name, placeholder: "Name"%><br><br>
+
+          <%= f.text_field :email, placeholder: "Email" %><br><br>
+
+          <%= f.password_field :password, placeholder: "Password" %><br><br>
+
+          <%= f.password_field :password_confirmation, placeholder: "Confirmation" %><br><br>
+
+          <%= f.submit "Create my account", class: "btn btn-xs btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div> 
