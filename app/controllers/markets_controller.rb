@@ -12,7 +12,7 @@ class MarketsController < ApplicationController
 
 	def show
 		@market = Market.find(params[:id])
-    @comment = @market.comments.new
+    	@comment = @market.comments.new
 	end
 
 

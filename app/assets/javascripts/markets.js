@@ -135,25 +135,28 @@ function initialize() {
 
   var marker, i, markers = [];
 
-  function showMarkers(map, filterByDay) {
+
+  function showMarkers(map) {
+    var filterByDay = $("ul#select_day").attr("data-filterDay");
+
     // clear all markers off the map
     // by setting each marker's map to null
     markers.forEach(function(marker) {
       marker.setMap(null);
     });
+
     // default locatins are all locations
     var locations = gon.locations;
     if (filterByDay) {
+      
+      markers = [];
       // when filter is passed in
       // filter the locations such
       // that the day matches the filter day 
       // that the user had selected
       locations = locations.filter(function(location) {
-        // var locationDays = location.day.split(", ");
-        // locationDays = locationDays.filter(function(days) {
-        //     return days === filterByDay;
-        // });
-        return location.day === filterByDay;
+         console.log("location.day", location.day)
+         return location.day.indexOf(filterByDay) !== -1;
       });
     }
     // iterate through the filtered day array
@@ -171,7 +174,7 @@ function initialize() {
       // for each location
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i].name);
+          infowindow.setContent('<a href="/sf_farmers_market_guide/' + locations[i].id +'">' + locations[i].name + '</a>');
           infowindow.open(map, marker);
         }
       })(marker, i));
@@ -181,8 +184,10 @@ function initialize() {
   showMarkers(map);
 
   $("ul#select_day a").click(function(eventObject) {
+    eventObject.preventDefault();
     var dayOfWeek = eventObject.toElement.innerHTML;
-    showMarkers(map, dayOfWeek);
+    $("ul#select_day").attr('data-filterDay', dayOfWeek);
+    showMarkers(map);
   });
 }
 
