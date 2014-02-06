@@ -18,7 +18,7 @@ function initialize() {
     console.log(filterByDay);
     for (i = 0; i < gon.locations.length; i++) {
       if (filterByDay !== undefined) {
-        eventObject
+        
       } 
       else {
         marker = new google.maps.Marker({
