@@ -12,9 +12,8 @@ class UsersController < ApplicationController
     user = params.require(:user).permit(:name, :email, :password, :password_confirmation)
     @user = User.new(user)
     if @user.save
-      flash[:success] = "Welcome to SF Farmers' Market Guide!"
       sign_in @user
-      redirect_to @user
+      redirect_to index_path
     else
       render 'new'
     end

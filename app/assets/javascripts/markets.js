@@ -154,7 +154,7 @@ function initialize() {
       // that the day matches the filter day 
       // that the user had selected
       locations = locations.filter(function(location) {
-         console.log("location.day", location.day)
+         // console.log("location.day", location.day)
          return location.day.indexOf(filterByDay) !== -1;
       });
     }
@@ -176,6 +176,7 @@ function initialize() {
           infowindow.setContent('<a href="/sf_farmers_market_guide/' + locations[i].id +'">' + locations[i].name + '</a>');
           infowindow.open(map, marker);
         }
+        // display marker on map
       })(marker, i));
     };
   };

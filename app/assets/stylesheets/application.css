@@ -16,6 +16,13 @@
 	color: red;
 }
 
+#success_message {
+	color: #4DBF9D;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+
 /*.bgimage {
 	background: url('producepic.jpg') no-repeat;
 	background-position: right;

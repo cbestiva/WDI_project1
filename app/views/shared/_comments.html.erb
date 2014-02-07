@@ -1,6 +1,6 @@
 <h5>Comments:</h5>
 <% for comment in @market.comments %>
-  <%= comment.body %><br><br>
+  <%= comment.body %> - <%= current_user.name %><br><br>
 <% end %>
 
 <br><br>
