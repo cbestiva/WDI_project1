@@ -148,8 +148,7 @@ function initialize() {
     // default locatins are all locations
     var locations = gon.locations;
     if (filterByDay) {
-      
-      markers = [];
+
       // when filter is passed in
       // filter the locations such
       // that the day matches the filter day 
