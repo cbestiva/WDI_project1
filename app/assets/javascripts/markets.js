@@ -176,14 +176,15 @@ function initialize() {
           infowindow.setContent('<a href="/sf_farmers_market_guide/' + locations[i].id +'">' + locations[i].name + '</a>');
           infowindow.open(map, marker);
         }
-        // display marker on map
       })(marker, i));
     };
   };
-  
+  // display marker on map
   showMarkers(map);
 
+
   $("ul#select_day a").click(function(eventObject) {
+    // prevent a link for following a URL
     eventObject.preventDefault();
     var dayOfWeek = eventObject.toElement.innerHTML;
     $("ul#select_day").attr('data-filterDay', dayOfWeek);
