@@ -1,7 +1,9 @@
 <h5>Comments:</h5>
 <% for comment in @market.comments %>
-  <% if comment.body %>
-  	<%= comment.body %> - <%= current_user.name %><br><br>
+  <% if current_user == nil %>
+    <%= comment.body %><br><br>
+  <% elsif comment.body %>
+  	<%= comment.body %> - <%= @current_user.name %><br><br>
   <% end %>
 <% end %>
 
