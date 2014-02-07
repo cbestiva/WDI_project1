@@ -13,6 +13,7 @@ class MarketsController < ApplicationController
 	def show
 		@market = Market.find(params[:id])
     	@comment = @market.comments.new
+    	gon.locations = @market
 	end
 
 
