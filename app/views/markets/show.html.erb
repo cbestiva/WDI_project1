@@ -1,5 +1,5 @@
 <div class="container">
-	<%= flash[:error] %>
+	<div id="error_notice"><%= flash[:error] %></div>
 	<h4><%= @market.name %></h4>
 
 	<%= @market.address %><br>
@@ -8,8 +8,7 @@
 	Phone number: <%= @market.number == nil ? @market.number = "N/A" : @market.number %><br>
 	<%= @market.description == nil ? @market.description = "" : @market.description = "*" + @market.description %><br><br>
 
-	<a href="/sf_farmers_market_guide/list">
-	<button type="button" class="btn btn-success btn-xs">Back</button>
+	<a href="/sf_farmers_market_guide/list" role="button" class="btn btn-success btn-xs">Back
 	</a><br><br>
 
 	<%= render :partial => "shared/comments", :locals => {:commentable => @market} %>
