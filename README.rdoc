@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SF Farmers' Market Guide
 
-Things you may want to cover:
+Web app providing San Francisco's farmers' markets information - Days, Times, locations.
 
-* Ruby version
+API: 
+- Google Maps
 
-* System dependencies
+Languages and Frameworks: 
+- Ruby on Rails
+- Javascript
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Others:
+- Snazzy Maps
+- Bootstrap
